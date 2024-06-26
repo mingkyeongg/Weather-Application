@@ -1,0 +1,71 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background Ring -->
+    <item android:id="@android:id/background">
+        <shape android:shape="ring"
+            android:innerRadiusRatio="4"
+            android:thicknessRatio="15"
+            android:useLevel="false">
+            <solid android:color="#C0C0C0" />
+        </shape>
+    </item>
+
+    <!-- Blue Segment (0-30) -->
+    <item>
+        <clip
+            android:clipOrientation="horizontal"
+            android:gravity="left"
+            android:level="3000"> <!-- Level is 3000/18000 for 0-30 range -->
+            <shape android:shape="ring"
+                android:innerRadiusRatio="4"
+                android:thicknessRatio="15"
+                android:useLevel="true">
+                <solid android:color="#0000FF" />
+            </shape>
+        </clip>
+    </item>
+
+    <!-- Green Segment (31-80) -->
+    <item>
+        <clip
+            android:clipOrientation="horizontal"
+            android:gravity="left"
+            android:level="8000"> <!-- Level is 8000/18000 for 31-80 range -->
+            <shape android:shape="ring"
+                android:innerRadiusRatio="4"
+                android:thicknessRatio="15"
+                android:useLevel="true">
+                <solid android:color="#4CAF50" />
+            </shape>
+        </clip>
+    </item>
+
+    <!-- Yellow Segment (81-150) -->
+    <item>
+        <clip
+            android:clipOrientation="horizontal"
+            android:gravity="left"
+            android:level="15000"> <!-- Level is 15000/18000 for 81-150 range -->
+            <shape android:shape="ring"
+                android:innerRadiusRatio="4"
+                android:thicknessRatio="15"
+                android:useLevel="true">
+                <solid android:color="#FFEB3B" />
+            </shape>
+        </clip>
+    </item>
+
+    <!-- Red Segment (151-180) -->
+    <item>
+        <clip
+            android:clipOrientation="horizontal"
+            android:gravity="left"
+            android:level="18000"> <!-- Level is 18000/18000 for 151-180 range -->
+            <shape android:shape="ring"
+                android:innerRadiusRatio="4"
+                android:thicknessRatio="15"
+                android:useLevel="true">
+                <solid android:color="#F44336" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

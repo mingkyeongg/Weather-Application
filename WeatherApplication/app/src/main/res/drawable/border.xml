@@ -1,0 +1,12 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent"/> <!-- 배경색 투명 -->
+    <stroke
+        android:width="2dp"
+        android:color="#D3D3D3"/> <!-- 테두리 색상 및 두께 설정 -->
+    <corners android:radius="10dp"/> <!-- 모서리 둥글게 설정 -->
+    <padding
+        android:left="16dp"
+        android:top="8dp"
+        android:right="16dp"
+        android:bottom="8dp"/> <!-- 패딩 설정 -->
+</shape>

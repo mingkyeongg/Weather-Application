@@ -1,0 +1,18 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#7F7F7F" /> <!-- 눌린 상태 색상 (어두운 회색) -->
+            <corners android:radius="16dp" />
+            <padding android:left="16dp" android:top="8dp" android:right="16dp" android:bottom="8dp" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <gradient
+                android:angle="90"
+                android:tint="#D3D3D3" /> <!-- 기본 상태 색상 (밝은 회색에서 중간 회색) -->
+            <corners android:radius="16dp" />
+            <padding android:left="16dp" android:top="8dp" android:right="16dp" android:bottom="8dp" />
+        </shape>
+    </item>
+</selector>

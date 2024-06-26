@@ -1,0 +1,8 @@
+<!-- res/drawable/splash_screen.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/start_image" /> <!-- your_splash_image는 실제 이미지 파일 이름 -->
+    </item>
+</layer-list>

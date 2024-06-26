@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:id="@+id/main_layout"
+    android:background="@drawable/day_sunny"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 상단의 현재 위치, 다른 지역 버튼 -->
+        <LinearLayout
+            android:id="@+id/date_and_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/current_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/gmarketsansttfmedium"
+                android:gravity="center"
+                android:lineSpacingExtra="8dp"
+                android:text="현재 날짜"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/current_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gmarketsansttfmedium"
+                android:gravity="center"
+                android:lineSpacingExtra="8dp"
+                android:text="현재 위치"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- 현재시간 텍스트 -->
+        <TextView
+            android:id="@+id/current_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="65sp"
+            android:layout_marginTop="20dp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/gmarketsansttfmedium"
+            android:text="현재 시간"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/temperature_and_weather"
+            android:layout_below="@+id/current_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/weather_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/weather_sunny"
+                android:layout_marginEnd="8dp"
+                app:tint="#FFFFFF" /> <!-- 아이콘과 텍스트 사이의 간격 -->
+
+            <TextView
+                android:id="@+id/current_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gmarketsansttfmedium"
+                android:gravity="center"
+                android:lineSpacingExtra="8dp"
+                android:text="현재온도"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF" />
+
+            <ImageView
+                android:id="@+id/rain_icon"
+                android:layout_marginStart="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:tint="#FFFFFF"
+                android:src="@drawable/rain_percent"
+                android:layout_marginEnd="8dp" /> <!-- 아이콘과 텍스트 사이의 간격 -->
+
+            <TextView
+                android:id="@+id/rain_probability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gmarketsansttfmedium"
+                android:text="강수 확률"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:gravity="center_vertical"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/high_low_temperature"
+            android:layout_below="@+id/temperature_and_weather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gmarketsansttfmedium"
+            android:gravity="center"
+            android:lineSpacingExtra="8dp"
+            android:text="최고 최저 온도"
+            android:textColor="#A9A9A9"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="16dp" />
+
+        <!-- 미세먼지와 초미세먼지 아이콘 및 텍스트 -->
+        <LinearLayout
+            android:id="@+id/dust_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/precipitation_probability"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- 미세먼지 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/fine_dust_img"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:shadowColor="#FFFFFF"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="3"
+                    android:src="@drawable/ic_status_low"
+                    android:elevation="4dp" />
+
+                <TextView
+                    android:id="@+id/fine_dust_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/gmarketsansttfmedium"
+                    android:text="미세먼지"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:shadowColor="#FFFFFF"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="3" />
+            </LinearLayout>
+
+            <!-- 초미세먼지 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/ultrafine_dust_img"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/ic_status_low"
+                    android:elevation="4dp" />
+
+                <TextView
+                    android:id="@+id/ultrafine_dust_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/gmarketsansttfmedium"
+                    android:text="초미세먼지"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFF"
+                    android:shadowColor="#FFFFFF"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="3" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!-- 오늘 뭐 입지? 버튼 -->
+        <Button
+            android:id="@+id/what_to_wear_button"
+            android:layout_below="@id/dust_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            style="@style/CustomButton"
+            android:text="AI에게 추천받기" />
+
+    </LinearLayout>
+</RelativeLayout>
